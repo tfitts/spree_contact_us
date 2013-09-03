@@ -8,7 +8,7 @@ class Spree::ContactUs::ContactsController < Spree::StoreController
       if Spree::ContactUs::Config.contact_tracking_message.present?
         flash[:contact_tracking] = Spree::ContactUs::Config.contact_tracking_message
       end
-      redirect_to(spree.root_path, :notice => t('spree.contact_us.notices.success'))
+      redirect_to(spree.root_path, :notice => I18n.t('spree.contact_us.notices.success'))
     else
       render :new
     end
@@ -21,7 +21,7 @@ class Spree::ContactUs::ContactsController < Spree::StoreController
   private
 
   def accurate_title
-    t('contact_us')
+    I18n.t('contact_us')
   end
 
 end
